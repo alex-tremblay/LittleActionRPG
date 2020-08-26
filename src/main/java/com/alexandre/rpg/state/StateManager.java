@@ -2,6 +2,9 @@ package com.alexandre.rpg.state;
 
 import java.awt.*;
 
+/**
+ * Manage the current state and the transition between them
+ */
 public class StateManager {
     private State _currentState;
 

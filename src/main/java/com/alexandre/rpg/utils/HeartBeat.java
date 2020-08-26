@@ -1,4 +1,4 @@
-package com.alexandre.rpg;
+package com.alexandre.rpg.utils;
 
 import com.alexandre.rpg.state.StateManager;
 
@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 
 /**
- * com.alexandre.rpg.HeartBeat, com.alexandre.rpg.Main game loop
+ * The heart of this game, loop a lot of time per second to calculate all things!
  */
 public class HeartBeat extends Panel implements Runnable  {
 
@@ -37,7 +37,7 @@ public class HeartBeat extends Panel implements Runnable  {
     }
 
     /**
-     * com.alexandre.rpg.Main loop
+     * The main game loop!
      */
     @Override
     public void run() {
@@ -84,6 +84,9 @@ public class HeartBeat extends Panel implements Runnable  {
         _gameWindow.createWindow(this);
     }
 
+    /**
+     * Use or create a buffer to remove lag from rendering to the screen and pass it to the state manager
+     */
     private void render() {
         BufferStrategy bufferStrategy = _gameWindow.getFrame().getBufferStrategy();
         if (bufferStrategy == null) {
